@@ -1,0 +1,456 @@
+.movie-card {
+    text-align: center;
+    margin: 50px;
+    background-color: aliceblue;
+    padding: 50px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+.movie-image {
+    width: 200px;
+    height: auto;
+}
+
+.topic {
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: center;
+    gap: 150px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-film-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.add-film-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-film-container label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.add-film-container input,
+.add-film-container select {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-film-container select {
+    height: 100px;
+    /* aby bolo vidno viac žánrov naraz */
+}
+
+.home-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Hero sekcia */
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #888;
+}
+
+
+/* Features */
+
+.features {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box h2 {
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    color: #666;
+}
+
+
+/* ===== DETAIL FILMU - ČISTÝ BIELO-ŠEDÝ DIZAJN ===== */
+
+.movie-detail-page {
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 30px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.movie-detail-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+/* Horný backdrop obrázok */
+
+.movie-backdrop {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-color: #e0e0e0;
+    /* fallback */
+}
+
+.movie-backdrop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, white, transparent);
+}
+
+
+/* Hlavný obsah */
+
+.movie-content {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Poster */
+
+.movie-poster {
+    flex-shrink: 0;
+    width: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    background: white;
+    border: 1px solid #eee;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Informácie */
+
+.movie-info-detailed {
+    flex: 1;
+}
+
+.movie-info-detailed h1 {
+    font-size: 42px;
+    margin: 0 0 15px 0;
+    color: #222;
+    font-weight: 700;
+}
+
+
+/* Rating - bielo-šedý so žltou hviezdou */
+
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.rating-badge span:first-child {
+    color: #ffc107;
+    /* jemne žltá */
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.rating-badge span:last-child {
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+}
+
+
+/* Meta informácie (rok, dĺžka) */
+
+.movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 16px;
+}
+
+.meta-item i {
+    font-size: 20px;
+    opacity: 0.7;
+    color: #555;
+    /* žiadne farebné ikony */
+}
+
+
+/* Žánre */
+
+.genre-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.genre-tag {
+    background: #f0f0f0;
+    color: #333;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    /* odstránený tieň */
+}
+
+
+/* Réžia */
+
+.director-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    padding: 15px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    border-left: 4px solid #999;
+    /* sivý pruh namiesto farebného */
+}
+
+.director-icon {
+    width: 48px;
+    height: 48px;
+    background: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #555;
+}
+
+.director-info {
+    flex: 1;
+}
+
+.director-label {
+    font-size: 13px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.director-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+
+/* Popis */
+
+.description-box {
+    background: #fafafa;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+    border-left: 4px solid #999;
+    /* sivý pruh pre jednotnosť */
+}
+
+.description-box h3 {
+    margin: 0 0 12px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.description-box p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* Tlačidlo späť */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    border: 1px solid #ddd;
+}
+
+.back-button:hover {
+    background: #e5e5e5;
+}
+
+
+/* Loading */
+
+.loading-premium {
+    text-align: center;
+    padding: 80px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 50px auto;
+    color: #333;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f0f0f0;
+    border-top-color: #888;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Responzivita */
+
+@media (max-width: 800px) {
+    .movie-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: -40px;
+    }
+    .movie-poster {
+        width: 220px;
+    }
+    .movie-meta {
+        justify-content: center;
+    }
+    .genre-tags {
+        justify-content: center;
+    }
+    .director-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
