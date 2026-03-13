@@ -1,456 +1,776 @@
-.movie-card {
-    text-align: center;
-    margin: 50px;
-    background-color: aliceblue;
-    padding: 50px;
-}
-
-.movie-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    justify-items: center;
-}
-
-.movie-image {
-    width: 200px;
-    height: auto;
-}
-
-.topic {
-    text-align: center;
-}
-
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-nav {
-    background-color: #f2f2f2;
-    padding: 10px;
-    text-align: center;
-    gap: 150px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 10px 20px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.add-film-container {
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.add-film-container form {
-    display: flex;
-    flex-direction: column;
-}
-
-.add-film-container label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.add-film-container input,
-.add-film-container select {
-    margin-top: 5px;
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.add-film-container select {
-    height: 100px;
-    /* aby bolo vidno viac žánrov naraz */
-}
-
-.home-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-}
-
-
-/* Hero sekcia */
-
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.hero h1 {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-style: italic;
-    color: #888;
-}
-
-
-/* Features */
-
-.features {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.feature-box {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-}
-
-.feature-box h2 {
-    margin-bottom: 10px;
-}
-
-.feature-box p {
-    color: #666;
-}
-
-
-/* ===== DETAIL FILMU - ČISTÝ BIELO-ŠEDÝ DIZAJN ===== */
-
-.movie-detail-page {
-    background: #f5f5f5;
-    min-height: 100vh;
-    padding: 30px 20px;
-    font-family: Arial, sans-serif;
-}
-
-.movie-detail-card {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-
-/* Horný backdrop obrázok */
-
-.movie-backdrop {
-    height: 350px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-color: #e0e0e0;
-    /* fallback */
-}
-
-.movie-backdrop::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to top, white, transparent);
-}
-
-
-/* Hlavný obsah */
-
-.movie-content {
-    display: flex;
-    gap: 40px;
-    padding: 40px;
-    margin-top: -80px;
-    position: relative;
-    z-index: 2;
-}
-
-
-/* Poster */
-
-.movie-poster {
-    flex-shrink: 0;
-    width: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-    background: white;
-    border: 1px solid #eee;
-}
-
-.movie-poster img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-/* Informácie */
-
-.movie-info-detailed {
-    flex: 1;
-}
-
-.movie-info-detailed h1 {
-    font-size: 42px;
-    margin: 0 0 15px 0;
-    color: #222;
-    font-weight: 700;
-}
-
-
-/* Rating - bielo-šedý so žltou hviezdou */
-
-.rating-badge {
-    display: inline-flex;
-    align-items: center;
-    background: #f0f0f0;
-    padding: 8px 16px;
-    border-radius: 40px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-}
-
-.rating-badge span:first-child {
-    color: #ffc107;
-    /* jemne žltá */
-    font-size: 20px;
-    margin-right: 8px;
-}
-
-.rating-badge span:last-child {
-    font-weight: 600;
-    color: #333;
-    font-size: 18px;
-}
-
-
-/* Meta informácie (rok, dĺžka) */
-
-.movie-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 20px 0;
-    padding: 20px 0;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.meta-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #555;
-    font-size: 16px;
-}
-
-.meta-item i {
-    font-size: 20px;
-    opacity: 0.7;
-    color: #555;
-    /* žiadne farebné ikony */
-}
-
-
-/* Žánre */
-
-.genre-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.genre-tag {
-    background: #f0f0f0;
-    color: #333;
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid #ddd;
-    box-shadow: none;
-    /* odstránený tieň */
-}
-
-
-/* Réžia */
-
-.director-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 25px 0;
-    padding: 15px;
-    background: #f8f8f8;
-    border-radius: 12px;
-    border-left: 4px solid #999;
-    /* sivý pruh namiesto farebného */
-}
-
-.director-icon {
-    width: 48px;
-    height: 48px;
-    background: #e0e0e0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #555;
-}
-
-.director-info {
-    flex: 1;
-}
-
-.director-label {
-    font-size: 13px;
-    color: #777;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.director-name {
-    font-size: 20px;
-    font-weight: 600;
-    color: #222;
-}
-
-
-/* Popis */
-
-.description-box {
-    background: #fafafa;
-    padding: 25px;
-    border-radius: 12px;
-    margin-top: 20px;
-    border: 1px solid #eee;
-    border-left: 4px solid #999;
-    /* sivý pruh pre jednotnosť */
-}
-
-.description-box h3 {
-    margin: 0 0 12px 0;
-    color: #333;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.description-box p {
-    margin: 0;
-    line-height: 1.7;
-    color: #555;
-}
-
-
-/* Tlačidlo späť */
-
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 25px;
-    padding: 10px 20px;
-    background: #f0f0f0;
-    color: #333;
-    text-decoration: none;
-    border-radius: 40px;
-    font-weight: 500;
-    font-size: 15px;
-    border: 1px solid #ddd;
-}
-
-.back-button:hover {
-    background: #e5e5e5;
-}
-
-
-/* Loading */
-
-.loading-premium {
-    text-align: center;
-    padding: 80px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
-    margin: 50px auto;
-    color: #333;
-}
-
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid #f0f0f0;
-    border-top-color: #888;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin: 20px auto;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+    /* ── Variables ─────────────────────────────────────────────── */
+    
+     :root {
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --surface2: #242424;
+        --border: #2e2e2e;
+        --accent: #e8a020;
+        --accent2: #c4851a;
+        --text: #e8e8e8;
+        --muted: #888;
+        --radius: 10px;
     }
-}
-
-
-/* Responzivita */
-
-@media (max-width: 800px) {
+    /* ── Reset & Base ──────────────────────────────────────────── */
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        min-height: 100vh;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+    }
+    
+    a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: var(--accent2);
+    }
+    /* ── Header ────────────────────────────────────────────────── */
+    
+    header {
+        background: var(--surface);
+        border-bottom: 2px solid var(--accent);
+        padding: 18px 40px;
+    }
+    
+    .topic {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-align: center;
+    }
+    /* ── Navbar ────────────────────────────────────────────────── */
+    
+    nav {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 40px;
+    }
+    
+    .nav-link {
+        color: var(--muted);
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 14px 22px;
+        border-bottom: 3px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+    }
+    
+    .nav-link:hover,
+    .router-link-active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+    /* ── Buttons ───────────────────────────────────────────────── */
+    
+    button {
+        background: var(--accent);
+        color: #0f0f0f;
+        border: none;
+        border-radius: var(--radius);
+        padding: 9px 20px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+    }
+    
+    button:hover {
+        background: var(--accent2);
+        transform: translateY(-1px);
+    }
+    /* ── HOME PAGE ─────────────────────────────────────────────── */
+    
+    .home-container {
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 0 24px;
+    }
+    
+    .hero {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    
+    .hero h1 {
+        font-size: 56px;
+        color: var(--accent);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+    
+    .hero p {
+        font-size: 17px;
+        color: var(--muted);
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+    
+    .subtitle {
+        font-style: italic;
+        color: #555;
+    }
+    
+    .features {
+        display: flex;
+        gap: 24px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .feature-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 32px 28px;
+        width: 280px;
+        transition: border-color 0.2s, transform 0.2s;
+    }
+    
+    .feature-box:hover {
+        border-color: var(--accent2);
+        transform: translateY(-4px);
+    }
+    
+    .feature-box h2 {
+        font-size: 22px;
+        color: var(--accent);
+        margin-bottom: 10px;
+    }
+    
+    .feature-box p {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    /* ── FILMS PAGE ────────────────────────────────────────────── */
+    
+    h1 {
+        font-size: 36px;
+        padding: 32px 40px 10px;
+        text-transform: uppercase;
+        color: var(--text);
+    }
+    
+    .movie-filter {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px 24px;
+        margin: 0 40px 12px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+    
+    .movie-filter label,
+    .movie-sort label {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    
+    .movie-filter input[type="text"],
+    .movie-filter input[type="number"] {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text);
+        padding: 8px 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    
+    .movie-filter input:focus {
+        border-color: var(--accent);
+    }
+    
+    .movie-filter input[type="checkbox"] {
+        accent-color: var(--accent);
+        width: 15px;
+        height: 15px;
+    }
+    
+    .movie-sort {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 14px 24px;
+        margin: 0 40px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    
+    .movie-sort select {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text);
+        padding: 8px 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .movie-sort select:focus {
+        border-color: var(--accent);
+    }
+    /* ── Movie Grid & Cards ────────────────────────────────────── */
+    
+    .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 24px;
+        padding: 0 40px 60px;
+    }
+    
+    .movie-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+    
+    .movie-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+    }
+    
+    .movie-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .movie-card h2 {
+        font-size: 17px;
+        padding: 14px 14px 4px;
+        color: var(--text);
+    }
+    
+    .movie-rating {
+        font-size: 13px;
+        color: var(--accent);
+        padding: 0 14px 12px;
+        font-weight: 700;
+    }
+    
+    .movie-card a {
+        margin: 0 14px 8px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+    }
+    
+    .movie-card a:hover {
+        color: var(--accent2);
+    }
+    
+    .movie-card button {
+        margin: 0 14px 14px;
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+    /* ── DETAIL PAGE ───────────────────────────────────────────── */
+    
+    .movie-detail-page {
+        padding: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    .movie-detail-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+    }
+    
+    .movie-header-image {
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+        background-color: var(--surface2);
+    }
+    
     .movie-content {
+        display: flex;
+        gap: 40px;
+        padding: 40px;
+    }
+    
+    .movie-poster {
+        flex-shrink: 0;
+        width: 240px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+    }
+    
+    .movie-poster img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .movie-info {
+        flex: 1;
+    }
+    
+    .back-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 13px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        transition: color 0.2s;
+    }
+    
+    .back-link:hover {
+        color: var(--accent);
+    }
+    
+    .movie-info h1 {
+        font-size: 42px;
+        color: var(--text);
+        margin-bottom: 14px;
+    }
+    
+    .rating-box {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        padding: 8px 18px;
+        border-radius: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .star {
+        color: var(--accent);
+        font-size: 20px;
+    }
+    
+    .rating-value {
+        font-weight: 700;
+        font-size: 17px;
+        color: var(--text);
+    }
+    
+    .meta-info {
+        display: flex;
+        gap: 24px;
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 16px;
+    }
+    
+    .meta-item {
+        color: var(--muted);
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    
+    .genre-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .genre-item {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 5px 14px;
+        border-radius: 30px;
+        font-size: 13px;
+    }
+    
+    .director-block {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--surface2);
+        border-left: 3px solid var(--accent);
+        border-radius: var(--radius);
+        padding: 14px 18px;
+        margin-bottom: 20px;
+    }
+    
+    .director-icon {
+        font-size: 24px;
+    }
+    
+    .director-label {
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    
+    .director-name {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text);
+    }
+    
+    .description-section {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 22px;
+    }
+    
+    .description-section h3 {
+        font-size: 16px;
+        color: var(--accent);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    
+    .description-section p {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 15px;
+    }
+    /* ── ADD FILM ──────────────────────────────────────────────── */
+    
+    .add-film-container {
+        width: 440px;
+        margin: 40px auto;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 36px;
+    }
+    
+    .add-film-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .add-film-container label {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 10px;
+    }
+    
+    .add-film-container input,
+    .add-film-container select {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        color: var(--text);
+        padding: 10px 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    
+    .add-film-container input:focus,
+    .add-film-container select:focus {
+        border-color: var(--accent);
+    }
+    
+    .add-film-container select {
+        height: 130px;
+    }
+    
+    .add-film-container button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    /* ── LOGIN PAGE ────────────────────────────────────────────── */
+    
+    .login-form {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        margin-top: -40px;
+        gap: 14px;
+        margin-top: 40px;
     }
-    .movie-poster {
-        width: 220px;
-    }
-    .movie-meta {
-        justify-content: center;
-    }
-    .genre-tags {
-        justify-content: center;
-    }
-    .director-section {
+    
+    .login-form form {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 40px;
+        width: 360px;
+        display: flex;
         flex-direction: column;
-        text-align: center;
+        gap: 10px;
     }
-}
+    
+    .login-form label {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    
+    .login-form input {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        color: var(--text);
+        padding: 10px 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s;
+        width: 100%;
+    }
+    
+    .login-form input:focus {
+        border-color: var(--accent);
+    }
+    
+    .login-form button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    /* ── FAVORITES PAGE ────────────────────────────────────────── */
+    
+    .favorites-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 24px;
+        padding: 24px 40px;
+    }
+    
+    .favorite-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+    
+    .favorite-item:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+    }
+    
+    .favorite-image {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+    
+    .favorite-item h2 {
+        font-size: 16px;
+        padding: 12px 14px 6px;
+    }
+    
+    .favorite-item a {
+        padding: 0 14px 8px;
+        font-size: 13px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+    
+    .favorite-item button {
+        margin: 0 14px 14px;
+        font-size: 13px;
+        padding: 7px 14px;
+        background: #3a1a1a;
+        color: #e05050;
+        border: 1px solid #5a2020;
+    }
+    
+    .favorite-item button:hover {
+        background: #5a2020;
+    }
+    /* ── Loading ───────────────────────────────────────────────── */
+    
+    .loading-container {
+        text-align: center;
+        padding: 80px;
+        color: var(--muted);
+    }
+    
+    .spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid var(--surface2);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        margin: 0 auto 16px;
+    }
+    
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .fav-btn {
+        margin-top: 20px;
+        background: var(--surface2);
+        color: var(--muted);
+        border: 1px solid var(--border);
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+        transition: all 0.2s;
+    }
+    
+    .fav-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--surface2);
+        transform: none;
+    }
+    
+    .fav-btn.active {
+        background: var(--accent);
+        color: #0f0f0f;
+        border-color: var(--accent);
+    }
+    
+    .filter-toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: transparent;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        border-radius: 40px;
+        padding: 10px 22px;
+        margin-top: 32px;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .filter-toggle-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: transparent;
+        transform: none;
+    }
+    
+    .filter-toggle-btn.open {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    
+    .films-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 40px 0px;
+    }
+    /* ── Responsive ────────────────────────────────────────────── */
+    
+    @media (max-width: 768px) {
+        .movie-grid,
+        .favorites-list {
+            padding: 0 16px 40px;
+        }
+        .movie-filter,
+        .movie-sort,
+        h1 {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        .movie-detail-page {
+            padding: 16px;
+        }
+        .movie-content {
+            flex-direction: column;
+            padding: 24px;
+        }
+        .movie-poster {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        .fav-btn {
+            width: 100%;
+            margin: 0px !important;
+        }
+        .add-film-container {
+            width: 100vw;
+        }
+    }

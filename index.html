@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/vue-router@4"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="./js/script.js" type="module" defer></script>
 
 </head>
@@ -16,12 +17,8 @@
     <header>
         <h1 class="topic">FFC - Forrai Film Catalog</h1>
     </header>
-    <nav>
-        <router-link to="/" class="nav-link">Home</router-link>
-        <router-link to="/filmy" class="nav-link">Filmy</router-link>
-        <router-link to="/add" class="nav-link">Add Film</router-link>
-        <router-link to="/login" class="nav-link">Login</router-link>
-    </nav>
+    <navbar></navbar>
+
     <router-view></router-view>
 </body>
 

@@ -3,10 +3,15 @@ import AddFilmPage from "./components/AddFilmPage.js";
 import LoginPage from "./components/LoginPage.js";
 import FilmyPage from "./components/FilmyPage.js";
 import FilmyDetailPage from "./components/FilmyDetailPage.js";
+import navbar from "./components/navBar.js";
 const { createApp, ref, reactive } = Vue;
 const { createWebHistory, createRouter } = VueRouter;
 
+
 const app = createApp({
+    components: {
+        navbar
+    },
     setup() {
         return {}
     }

@@ -4,7 +4,7 @@ const HomePage = {
     <section class="hero">
         <h1>Welcome to Forrai Film Catalog</h1>
         <p>
-            Forrai Film Catalog is a website that provides an overview of movies, their ratings, and reviews.
+            Forrai Film Catalog is a website that provides an overview of movie and their ratings.
             Discover new movies, check their ratings, and find your next movie experience.
         </p>
         <p class="subtitle">
