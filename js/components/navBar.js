@@ -9,6 +9,7 @@ const navbar = {
         <router-link to="/add" class="nav-link">Add Film</router-link>
         
         <router-link v-if= "isLoggedIn == 1" :to="'/login?logged=1'" class="nav-link">Profile</router-link>
+
         <router-link v-else to="/login" class="nav-link">Login</router-link>
     </nav>
     `,

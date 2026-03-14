@@ -32,7 +32,7 @@ const LoginPage = {
         </template>
     </div>`,
     setup() {
-        const { isLoggedIn, LoggedUsername } = useGlobalState();
+        const { isLoggedIn, LoggedUsername, showToast } = useGlobalState();
         const router = useRouter();
         const route = useRoute();
         const username = ref("");
@@ -43,6 +43,7 @@ const LoginPage = {
             if (username.value && password.value) {
                 isLoggedIn.value = 1;
                 LoggedUsername.value = username.value;
+                showToast("Successfully logged in.");
                 // Presmerovanie na tú istú stránku s logged=1
                 router.push({ path: '/login', query: { logged: 1 } });
             }

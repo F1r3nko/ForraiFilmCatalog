@@ -7,6 +7,12 @@ import navbar from "./components/navBar.js";
 const { createApp, ref, reactive } = Vue;
 const { createWebHistory, createRouter } = VueRouter;
 
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
 
 const app = createApp({
     components: {

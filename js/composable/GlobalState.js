@@ -36,9 +36,16 @@ function loadFilms() {
         .catch(err => console.error("Chyba pri načítaní filmov:", err));
 }
 
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+}
+
 function useGlobalState() {
     loadFilms();
-    return { allFilms, allGenres, allDirectors, filteredFilms, isLoaded, isLoggedIn, LoggedUsername, oblubeneFilmy };
+    return { allFilms, allGenres, allDirectors, filteredFilms, isLoaded, isLoggedIn, LoggedUsername, oblubeneFilmy, showToast };
 }
 
 export { useGlobalState };

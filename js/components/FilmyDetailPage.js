@@ -61,7 +61,7 @@ const FilmyDetailPage = {
     `,
 
     setup() {
-        const { allFilms, oblubeneFilmy } = useGlobalState();
+        const { allFilms, oblubeneFilmy, showToast } = useGlobalState();
         const route = useRoute();
         const router = useRouter();
 
@@ -79,6 +79,7 @@ const FilmyDetailPage = {
                 oblubeneFilmy.splice(index, 1);
                 isFavorite.value = false;
             }
+            showToast(index === -1 ? "Film was added to favorites." : "Film was removed from favorites.");
         }
 
         return { film, isFavorite, toggleFavorite };

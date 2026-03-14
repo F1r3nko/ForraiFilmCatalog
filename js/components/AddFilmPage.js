@@ -1,4 +1,6 @@
 const { reactive } = Vue;
+const { useRouter } = VueRouter;
+
 import { useGlobalState } from "../composable/GlobalState.js";
 
 const AddFilmPage = {
@@ -65,7 +67,8 @@ const AddFilmPage = {
 
     setup() {
 
-        const { allFilms } = useGlobalState();
+        const { allFilms, showToast } = useGlobalState();
+        const router = useRouter();
 
         const newFilm = reactive({
             title: "",
@@ -82,12 +85,11 @@ const AddFilmPage = {
         function addFilm() {
 
             const film = {
-                id: allFilms.length + 1,
+                id: Math.max(...allFilms.map(f => f.id)) + 1,
                 ...newFilm
             };
 
             allFilms.push(film);
-
             // reset form
             newFilm.title = "";
             newFilm.year = "";
@@ -98,6 +100,8 @@ const AddFilmPage = {
             newFilm.description = "";
             newFilm.image = "";
             newFilm.price = "";
+            showToast("Film was created.");
+            router.push("/filmy/" + film.id);
         }
 
         return { newFilm, addFilm };
