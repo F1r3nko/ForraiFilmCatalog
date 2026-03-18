@@ -5,24 +5,24 @@ const FilmyFilter = {
     template: `
         <div>
             <div class="movie-filter">
-    <label>Search:</label>
-    <input type="text" v-model="query" @input="updateFilms">
+                <label>Search:</label>
+                <input type="text" v-model="query" @input="updateFilms">
 
-    <label>Minimum Rating:</label>
-    <input type="number" v-model="rating" @input="updateFilms" min="0" max="10" step="0.1">
+                <label>Minimum Rating:</label>
+                <input type="number" v-model="rating" @input="updateFilms" min="0" max="10" step="0.1">
 
-    <label>Minimum Year:</label>
-    <input type="number" v-model="minYear" @input="updateFilms" min="1900" max="2100" step="1">
+                <label>Minimum Year:</label>
+                <input type="number" v-model="minYear" @input="updateFilms" min="1900" max="2100" step="1">
 
-    <label>Maximum Year:</label>
-    <input type="number" v-model="maxYear" @input="updateFilms" min="1900" max="2100" step="1">
+                <label>Maximum Year:</label>
+                <input type="number" v-model="maxYear" @input="updateFilms" min="1900" max="2100" step="1">
 
-    <label>Minimum time(min):</label>
-    <input type="number" v-model="minTime" @input="updateFilms" min="0" max="500" step="1">
+                <label>Minimum time(min):</label>
+                <input type="number" v-model="minTime" @input="updateFilms" min="0" max="500" step="1">
 
-    <label>Maximum time(min):</label>
-    <input type="number" v-model="maxTime" @input="updateFilms" min="0" max="500" step="1">
-</div>
+                <label>Maximum time(min):</label>
+                <input type="number" v-model="maxTime" @input="updateFilms" min="0" max="500" step="1">
+            </div>
 
             <div class="movie-filter">
                 <div>Genres:</div>
@@ -78,13 +78,13 @@ const FilmyFilter = {
             if (maxYear.value) films = films.filter(m => m.year <= maxYear.value);
             if (query.value) films = films.filter(m => m.title.toLowerCase().includes(query.value.toLowerCase()));
             if (selectedGenres.value.length) films = films.filter(m => selectedGenres.value.every(g => m.genre.includes(g)));
-            if (selectedDirectors.value) films = films.filter(m => m.director === selectedDirectors.value);
+            if (selectedDirectors.value) films = films.filter(m => m.director == selectedDirectors.value);
             if (minTime.value) films = films.filter(m => m.duration >= minTime.value);
             if (maxTime.value) films = films.filter(m => m.duration <= maxTime.value);
 
             switch (sort.value) {
                 case "sortAZ":
-                    films.sort((a, b) => a.title.localeCompare(b.title));
+                    films.sort((a, b) => a.title.localeCompare(b.title)); //localeCompare pre male a velke pismena
                     break;
                 case "sortZA":
                     films.sort((a, b) => b.title.localeCompare(a.title));

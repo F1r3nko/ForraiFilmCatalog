@@ -11,21 +11,19 @@ const MovieCard = {
             <div class="movie-rating">Rating: {{ movie.rating }}</div>
             <router-link :to="'/filmy/' + movie.id">Detail</router-link>
             <button @click="(event)=>{event.stopPropagation();showDesc = !showDesc}" class="fav-btn">
-                {{ showDesc ? '▲ Skryť popis' : '▼ Zobraziť popis' }}
+                {{ showDesc ? '▲ Hide description' : '▼ Show description' }}
             </button>
 
             <div class="descri" v-show="showDesc" >
                 {{ movie.description }}
             </div>
 
-            <!-- Ak sme v obľúbených → zobraz Remove -->
-            <button v-if="mode === 'favorites'" 
+            <button v-if="mode == 'favorites'" 
                 @click="(event)=>{event.stopPropagation();$emit('remove', movie)}" 
                 class="fav-btn" >
                 🗑 Remove
             </button>
 
-            <!-- Inak → zobraz Add/Favorite -->
             <button v-else 
                 @click="(event)=>{event.stopPropagation();$emit('toggle-favorite', movie)}" 
                 class="fav-btn" :class="{ active: isFavorite }" >

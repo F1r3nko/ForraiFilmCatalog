@@ -1,5 +1,5 @@
 import { useGlobalState } from "../composable/GlobalState.js";
-import OblubeneFilmy from "./OblubeneMesta.js";
+import OblubeneFilmy from "./OblubeneFilmy.js";
 
 const { ref } = Vue;
 const { useRouter, useRoute } = VueRouter;
