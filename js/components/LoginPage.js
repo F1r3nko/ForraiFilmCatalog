@@ -39,7 +39,6 @@ const LoginPage = {
         const password = ref("");
 
         function login() {
-            // Jednoduché prihlásenie – stačí zadať meno a heslo (ignorujeme kontrolu)
             if (username.value && password.value) {
                 isLoggedIn.value = 1;
                 LoggedUsername.value = username.value;

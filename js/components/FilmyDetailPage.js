@@ -65,7 +65,7 @@ const FilmyDetailPage = {
         const route = useRoute();
         const router = useRouter();
 
-        const film = ref(allFilms.find(f => f.id == route.params.id));
+        const film = ref(allFilms.find(f => f.id == route.params.id)); //ref lebo moze vratit undefined
         if (!film.value) router.push('/filmy');
 
         const isFavorite = ref(oblubeneFilmy.includes(film.value));

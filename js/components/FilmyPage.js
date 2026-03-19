@@ -42,8 +42,8 @@ const FilmyPage = {
 
         function toggleFavorite(movie) {
             const index = oblubeneFilmy.indexOf(movie);
-            index === -1 ? oblubeneFilmy.push(movie) : oblubeneFilmy.splice(index, 1);
-            showToast(index === -1 ? "Film was added to favorites." : "Film was removed from favorites.");
+            index == -1 ? oblubeneFilmy.push(movie) : oblubeneFilmy.splice(index, 1); // ak nenajde vrati -1
+            showToast(index == -1 ? "Film was added to favorites." : "Film was removed from favorites."); //naprv zaporne ptoom kladne
 
         }
 
