@@ -44,10 +44,10 @@ const AddFilmPage = {
             </select>
 
             <label>Rating:</label>
-            <input type="number" step="0.1" v-model="newFilm.rating" required>
+            <input type="number" step="0.1" v-model="newFilm.rating" min="0" max="10" required>
 
             <label>Duration - min.:</label>
-            <input type="number" v-model="newFilm.duration" required>
+            <input type="number" v-model="newFilm.duration" min="0" max="500" required>
 
             <label>Description:</label>
             <input type="text" v-model="newFilm.description" required>

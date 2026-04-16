@@ -71,7 +71,7 @@ const FilmyFilter = {
         const maxTime = ref(null);
 
         function updateFilms() {
-            let films = [...allFilms];
+            let films = [...allFilms]; //spread
 
             if (rating.value) films = films.filter(m => m.rating >= rating.value);
             if (minYear.value) films = films.filter(m => m.year >= minYear.value);
